@@ -3,14 +3,12 @@ import { User } from "../../models/user/user.model";
 import { IUserDomain } from '../../domain/user/iuser.domain';
 import { injectable } from 'inversify';
 import { JwtAuthentication } from '../../config/middlewares/jwt.authentication';
-import { Logger } from '../../helpers/logger';
 
 /**
  * User controller
  */
 @injectable()
-@Controller('/users')
-// @Controller('/users', { middlewares: [JwtAuthentication] })
+@Controller('/users', { middlewares: [JwtAuthentication] })
 export class UserController extends ApiController {
 
     /**

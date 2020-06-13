@@ -43,9 +43,9 @@ export class AuthRepository implements IAuthRepository {
                 expiresIn: 3600,
                 issuer: Enums.ISSUER
             });
-            this.auth.expiresIn = 3600,
-                this.auth.message = Enums.AUTHENTICATION_SUCCESS,
-                this.auth.auth = token
+            this.auth.expiresIn = 3600;
+            this.auth.message = Enums.AUTHENTICATION_SUCCESS;
+            this.auth.auth = token;
         }
         return this.auth;
     }

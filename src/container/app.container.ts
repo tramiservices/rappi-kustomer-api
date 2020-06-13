@@ -6,8 +6,6 @@ import { UserDomain } from '../domain/user/user.domain';
 import { IUserDomain } from '../domain/user/iuser.domain';
 import { UserRepository } from '../infrastructure/user/user.repository';
 import { IUserRepository } from '../infrastructure/user/iuser.repository';
-import { BaseRepository } from '../infrastructure/base/base.repository';
-import { IBaseRepository } from '../infrastructure/base/ibase.repository';
 import { IUserHelper } from '../domain/user/helper/iuser.helper';
 import { UserHelper } from '../domain/user/helper/user.helper';
 import { JsonResponse } from '../config/middlewares/json.response';
