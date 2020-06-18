@@ -15,7 +15,6 @@ import { IAuthRepository } from '../infrastructure/auth/iauth.repository';
 import { AuthRepository } from '../infrastructure/auth/auth.repository';
 import { AuthController } from '../controllers/auth/auth.controller';
 import { JwtAuthentication } from '../config/middlewares/jwt.authentication';
-import { ErrorResponse } from '../config/middlewares/error.response';
 
 let container = new Container();
 container.bind(IUserDomain).to(UserDomain);
@@ -26,7 +25,6 @@ container.bind(IUserHelper).to(UserHelper);
 container.bind(UserController).toSelf();
 container.bind(AuthController).toSelf();
 container.bind(JsonResponse).toSelf();
-container.bind(ErrorResponse).toSelf();
 container.bind(JwtAuthentication).toSelf();
 
 export { container as AppContainer };

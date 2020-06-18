@@ -9,7 +9,6 @@ import { AppContainer } from "./container/app.container";
 import { JsonResponse } from "./config/middlewares/json.response";
 import { AuthController } from "./controllers/auth/auth.controller";
 import { JwtAuthentication } from "./config/middlewares/jwt.authentication";
-import { ErrorResponse } from "./config/middlewares/error.response";
 import { serve, setup} from 'swagger-ui-express';
 import * as swaggerDoc from './swagger.json'
 import { Enums } from "./config/messages/enums";
@@ -60,7 +59,6 @@ class App {
         this.dino.registerController(UserController);
         this.dino.registerController(AuthController);
         this.dino.requestStart(JwtAuthentication);
-        this.dino.registerApplicationError(ErrorResponse);
         this.dino.requestEnd(JsonResponse);
         this.dino.dependencyResolver<Container>(AppContainer,
             (injector, type) => {

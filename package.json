@@ -8,8 +8,8 @@
     "dev": "nodemon src/server.ts",
     "prod": "node dist/server.js",
     "sonar": "sonar-scanner",
-    "coverage": "nyc --reporter=text --reporter=lcov npm test",
-    "test": "nyc mocha -r ts-node/register src/**/*.test.ts"
+    "coverage": "nyc --reporter=text --reporter=lcov npm run test",
+    "test": "mocha -r ts-node/register src/**/*.test.ts --exit"
   },
   "keywords": [
     "Rappi",
@@ -26,6 +26,7 @@
     "@types/faker": "^4.1.12",
     "@types/mocha": "^7.0.2",
     "@types/sinon": "^9.0.4",
+    "@types/supertest": "^2.0.9",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "cross-env": "^7.0.2",
@@ -35,6 +36,7 @@
     "nyc": "^15.1.0",
     "sinon": "^9.0.2",
     "sonarqube-scanner": "^2.6.0",
+    "supertest": "^4.0.2",
     "ts-node": "^8.10.2",
     "typescript": "^3.4.5"
   },
@@ -55,7 +57,9 @@
     "inversify-express-utils": "^6.3.2",
     "jsonwebtoken": "^8.5.1",
     "nodemon": "^2.0.4",
+    "npx": "^10.2.2",
     "pg": "^8.2.1",
+    "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.12",
     "source-map-support": "^0.5.19",
     "swagger-ui-express": "^4.1.4"

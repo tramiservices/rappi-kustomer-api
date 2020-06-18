@@ -37,7 +37,7 @@ export class JwtAuthentication extends MiddlewareAsync {
   * Builds api response
   * @returns api response 
   */
- private buildApiResponse(): ApiResponse<string> {
+ public buildApiResponse(): ApiResponse<string> {
     return {
       isSuccess: false,
       mesagge: Enums.FAIL,

@@ -1,4 +1,4 @@
-import { Pool } from 'pg';
+import { Pool, PoolClient } from 'pg';
 import { configuration } from '../../config';
 
 /**
@@ -22,17 +22,10 @@ export class DbContext {
     }
 
     /**
-     * Stop pool connection
-     */
-    async stop() {
-        await this.pool.end();
-    }
-
-    /**
      * Init pool connection
      */
-    async init() {
-        await this.pool.connect();
+    async init(): Promise<PoolClient> {
+        return await this.pool.connect();
     }
 }
 

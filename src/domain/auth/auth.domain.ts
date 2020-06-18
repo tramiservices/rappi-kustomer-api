@@ -13,7 +13,7 @@ export class AuthDomain implements IAuthDomain {
      * Creates an instance of auth domain.
      * @param userRepository 
      */
-    constructor(private _userRepository: IAuthRepository) { }
+    constructor(private _authRepository: IAuthRepository) { }
 
     /**
      * Generates token
@@ -21,6 +21,6 @@ export class AuthDomain implements IAuthDomain {
      * @returns auth 
      */
     public async generateToken(apikey: string): Promise<Auth> {
-        return await this._userRepository.generateToken(apikey);
+        return await this._authRepository.generateToken(apikey);
     }
 }
